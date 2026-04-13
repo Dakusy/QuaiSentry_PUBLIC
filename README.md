@@ -134,8 +134,6 @@ If a wallet's block history is out of sync (e.g. after a zone correction), `/wal
 - Circuit breaker state per endpoint
 - Recommended poll interval based on observed p95
 
-If `/status` shows a **Performance warning**, increase `POLL_INTERVAL` or check API circuit breaker status.
-
 ---
 
 ## Privacy & Security

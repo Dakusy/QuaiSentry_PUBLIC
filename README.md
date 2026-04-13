@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Discord](https://img.shields.io/badge/Discord-bot-5865F2?logo=discord&logoColor=white)
 ![Network](https://img.shields.io/badge/network-QUAI-orange)
-![Security](https://img.shields.io/badge/security-audited-blue)
+![CI](https://img.shields.io/badge/CI-passing-brightgreen)
 ![i18n](https://img.shields.io/badge/languages-EN%20%7C%20FR-lightgrey)
 
 A Discord bot that monitors QUAI wallets in near real time and delivers mining, transfer, unlock, and balance alerts — directly to your DMs or a server channel.
@@ -15,13 +15,13 @@ A Discord bot that monitors QUAI wallets in near real time and delivers mining, 
 
 ## Add QuaiSentry to Discord
 
-👉 **[Add to your account (recommended)](https://quaisentry.vercel.app)**
-Works as a user-install app — no server required.
+👉 **[Install via quaisentry.vercel.app](https://quaisentry.vercel.app)** ← start here
 
-👉 **[Invite to a server](https://quaisentry.vercel.app)**
-Add the bot to a Discord server to use shared channel notifications.
+Installing through the website is required to receive the welcome message and onboarding guide on Discord. Direct Discord invite links skip this step.
 
-After installing, use `/help` to get started.
+The website will redirect you to Discord's OAuth flow. Once authorized, the bot sends you a welcome DM with setup instructions. After that, use `/help` to get started.
+
+> **Server install:** if you want the bot in a shared server for channel notifications, use `/invite` after installing — it will give you the server invite link directly from Discord.
 
 ---
 
@@ -140,12 +140,14 @@ If `/status` shows a **Performance warning**, increase `POLL_INTERVAL` or check 
 
 ## Privacy & Security
 
+**Required permission:** the bot only needs the **Send Direct Messages** permission. It does not require access to message history, server members, or any other scope.
+
 - The bot stores only wallet addresses, labels, zone assignments, and notification preferences.
 - No private keys are ever requested or stored.
-- Notification data (block numbers, balances, tx hashes) is stored locally per user and never shared.
-- The bot token and all secrets are stored in environment variables and never committed or exposed.
+- Notification data (block numbers, balances, tx hashes) is stored per user and never shared.
 - All Discord interactions are ephemeral by default — replies are visible only to the requesting user.
-- The codebase passes ESLint validation on every CI run with zero errors tolerated.
+- The bot token and all secrets are stored in environment variables, never committed or exposed.
+- The codebase passes ESLint with zero errors on every CI run.
 
 ---
 
